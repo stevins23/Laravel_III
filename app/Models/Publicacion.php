@@ -5,7 +5,13 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Publicaciones extends Model
+class Publicacion extends Model
 {
     use HasFactory;
+
+    protected $table = 'publicaciones';
+
+    protected $guarded = [];
+
+    public $timestamps = false;
 }

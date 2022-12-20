@@ -15,7 +15,10 @@ return new class extends Migration
     {
         Schema::create('publicaciones', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
+            $table->foreignId('usuario_id')->constrained('usuarios')->onDelete('cascade');
+            $table->string('titulo', 50);
+            $table->string('publicacion', 250);
+            $table->date('fecha');
         });
     }
 

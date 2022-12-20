@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Factories\Factory;
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Publicaciones>
  */
-class PublicacionesFactory extends Factory
+class PublicacionFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -17,7 +17,10 @@ class PublicacionesFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'usuario_id' => \App\Models\Usuario::all()->random()->id,
+            'titulo' => $this->faker->sentence(3),
+            'publicacion' => $this->faker->sentence(10),
+            'fecha' => $this->faker->date(),
         ];
     }
 }

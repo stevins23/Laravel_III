@@ -15,7 +15,10 @@ return new class extends Migration
     {
         Schema::create('usuarios', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
+            $table->string('nombre', 50);
+            $table->string('apellido', 50);
+            $table->date('f_nacimiento');
+            $table->softDeletes();
         });
     }
 
