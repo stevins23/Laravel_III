@@ -16,7 +16,9 @@
                     <th>Apellidos</th>
                     <th>Fecha-Nacimiento</th>
                     <th>Edad</th>
+                    <th>Cantidad de publicaciones</th>
                     <th>Borrar</th>
+
                 </tr>
             </thead>
             <tbody>
@@ -26,12 +28,58 @@
                     <td>{{$usuario->apellido}}</td>
                     <td>{{$usuario->f_nacimiento}}</td>
                     <td>{{$usuario->edad()}}</td>
+                    <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">{{$usuario->publicaciones->count()}}</button></td>
                     <td><a href="" class="btn btn-danger btn_borrar">Borrar</a></td>
                 </tr>
                 @endforeach
             </tbody>
         </table>
     </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Listado de publicaciones del usuario {{$usuario->nombre}}</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+                <div class="container">
+                    <table id="tabla" class="table table-striped table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Usuario ID</th>
+                                <th>Título</th>
+                                <th>Publicación</th>
+                                <th>Fecha</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach ($usuario->publicaciones as $publicacion)
+                            <tr data-id='{{$usuario->id}}'>
+                                <td>{{$usuario->id}}</td>
+                                <td>{{$publicacion->titulo}}</td>
+                                <td>{{$publicacion->publicacion}}</td>
+                                <td>{{$publicacion->fecha}}</td>
+                            </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+
 
 <script>
     $(document).ready(function(){

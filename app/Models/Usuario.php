@@ -20,5 +20,10 @@ class Usuario extends Model
         return \Carbon\Carbon::parse($this->f_nacimiento)->age;
     }
 
+    public function publicaciones()
+    {
+        return $this->hasMany(Publicacion::class);
+    }
+
 
 }

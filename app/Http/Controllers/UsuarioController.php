@@ -97,5 +97,9 @@ class UsuarioController extends Controller
         return redirect()->route("usuarios.index");
     }
 
+    public function contarPublicaciones(Usuario $usuario)
+    {
+        return $usuario->publicaciones->count();
+    }
 
 }
