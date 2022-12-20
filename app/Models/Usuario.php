@@ -15,5 +15,10 @@ class Usuario extends Model
 
     public $timestamps = false;
 
+    public function edad()
+    {
+        return \Carbon\Carbon::parse($this->f_nacimiento)->age;
+    }
+
 
 }

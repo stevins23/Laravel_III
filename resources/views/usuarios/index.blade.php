@@ -9,6 +9,7 @@
                     <th>Nombre</th>
                     <th>Apellidos</th>
                     <th>Fecha-Nacimiento</th>
+                    <th>Edad</th>
                     <th>Borrar</th>
                 </tr>
             </thead>
@@ -18,6 +19,7 @@
                     <td>{{$usuario->nombre}}</td>
                     <td>{{$usuario->apellido}}</td>
                     <td>{{$usuario->f_nacimiento}}</td>
+                    <td>{{$usuario->edad()}}</td>
                     <td><a href="" class="btn btn-danger btn_borrar">Borrar</a></td>
                 </tr>
                 @endforeach
