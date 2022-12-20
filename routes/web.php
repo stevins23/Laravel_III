@@ -20,4 +20,5 @@ Route::get('/', function () {
 
 
 Route::get('usuarios/restaurar', [UsuarioController::class, 'restaurar'])->name('usuarios.restaurar');
+Route::get('usuarios/borrado_definitivo', [UsuarioController::class, 'borrado_definitivo'])->name('usuarios.borrado_definitivo');
 Route::resource("usuarios", UsuarioController::class);

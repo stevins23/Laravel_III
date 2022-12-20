@@ -91,5 +91,11 @@ class UsuarioController extends Controller
         return redirect()->route("usuarios.index");
     }
 
+    public function borrado_definitivo()
+    {
+        Usuario::onlyTrashed()->forceDelete();
+        return redirect()->route("usuarios.index");
+    }
+
 
 }

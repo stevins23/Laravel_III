@@ -6,6 +6,7 @@
         <div class="row">
             <div class="col-12">
                 <a href="{{route('usuarios.restaurar')}}" class="btn btn-success mb-3">Restaurar</a>
+                <a href="{{route('usuarios.borrado_definitivo')}}" class="btn btn-danger mb-3">Borrado Definitivo</a>
             </div>
         </div>
         <table id="tabla" class="table table-striped table-bordered">
