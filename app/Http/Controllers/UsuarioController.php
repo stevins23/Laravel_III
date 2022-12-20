@@ -15,7 +15,8 @@ class UsuarioController extends Controller
      */
     public function index()
     {
-        //
+        $usuarios = Usuario::all()->whereNull('deleted_at');
+        return view("usuarios.index",compact("usuarios"));
     }
 
     /**
@@ -81,6 +82,6 @@ class UsuarioController extends Controller
      */
     public function destroy(Usuario $usuario)
     {
-        //
+        $usuario->delete();
     }
 }
