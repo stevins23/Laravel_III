@@ -3,6 +3,11 @@
 @section("contenido")
     <h1>Esto es un listado de usurios buenos</h1>
     <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <a href="{{route('usuarios.restaurar')}}" class="btn btn-success mb-3">Restaurar</a>
+            </div>
+        </div>
         <table id="tabla" class="table table-striped table-bordered">
            <thead>
                 <tr>

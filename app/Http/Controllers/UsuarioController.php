@@ -84,4 +84,12 @@ class UsuarioController extends Controller
     {
         $usuario->delete();
     }
+
+    public function restaurar()
+    {
+        Usuario::onlyTrashed()->restore();
+        return redirect()->route("usuarios.index");
+    }
+
+
 }

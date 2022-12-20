@@ -18,4 +18,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+
+Route::get('usuarios/restaurar', [UsuarioController::class, 'restaurar'])->name('usuarios.restaurar');
 Route::resource("usuarios", UsuarioController::class);
